@@ -1,0 +1,34 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "my vector tile server for raspberrypi (from server-test-02 and server-test-03)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubukawa/albite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ubukawa/albite/issues"
+  },
+  "homepage": "https://github.com/ubukawa/albite#readme",
+  "dependencies": {
+    "@mapbox/mbtiles": "^0.12.1",
+    "config": "^3.3.8",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "hh-mm-ss": "^1.2.0",
+    "hjson": "^3.2.2",
+    "morgan": "^1.10.0",
+    "spdy": "^4.0.2",
+    "sqlite3": "^5.1.2",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  }
+}

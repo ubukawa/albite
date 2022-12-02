@@ -1,0 +1,18 @@
+{
+ morganFormat: tiny
+ htdocsPath: htdocs
+ privkeyPath: ./key/privkey.pem 
+ fullchainPath: ./key/cert.pem
+ logDirPath: log
+ port: 8836
+ mbtilesDir: mbtiles
+ defaultZ: 6
+ UNmbtilesDir: UNmbtiles
+ tz:{
+    UniteStreetMapVector: 6
+ }
+ sTileName:{
+    UniteStreetMapVector: small-scale
+ }
+}
+
