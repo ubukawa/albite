@@ -1,15 +1,17 @@
 <html>
 <body>
+<h1>Albite - Test server</h1>
+Vector tile server mainly for portable device (prototype). <br>
+Repository URL: <a href="https://github.com/ubukawa/albite">https://github.com/ubukawa/albite</a><br><br>
+<img src="photos/unhq.jpg" alt="image photo"><br><br>
+This is still a prototype server.<br>
+<i>Albite (NaAlSi3O8) is a common minearal. So, I named after this hoping that this server will also be a common tool for users. It is also important to note that Albite metamorphoses into other mineral in the different condision (e.g. at high pressure). </i><br><br>
 
-<h2>Your server seems working.</h2>
 
-Hello. This is test. <br><br><br>
+<h2>Functions</h2>
 
-
-
-<h3>Delivery of pbf tiles as static hosting</h3>
-You have "htdocs" folder for static hosting.<br>
-If your vector tiles (pbf) are stored in "htdocs" directory, your VT can be accessible at:<br>
+<h3>Function 1: Delivery of pbf tiles via static hosting (simple static hosting)</h3>
+You have "htdocs" folder for static hosting. If your vector tiles (in pbf format) are stored in "htdocs" directory, your VT can be accessible at:<br>
 <br>
 http://(your server name):8836/(directory name in "htdocs")/{z}/{x}/{y}.pbf
 <br>
@@ -20,9 +22,8 @@ http://(your server name):8836/(directory name in "htdocs")/{z}/{x}/{y}.pbf
 We have sample tile from NaturalEarth. Try <a href="./pbf_tile/ne-test/1/1/1.pbf">pbf_tile/ne-test/1/1/1.pbf</a>
 <br>
 <br>
-
-<h3>Delivery of pbf tiles from mbtiles (from single mbtiles)</h3>
-If you stored your mbtiles in "mbtiles" directory, your VT can be accessible at:<br>
+<h3>Function 2: Delivery of pbf tiles from single mbtiles via server-side processing (nodejs)</h3>
+If you stored your mbtiles in "mbtiles" directory, this server deliver "pbf" vector tiles from it upon requests. your VT can be accessible at:<br>
 <br>
 http://(your server name):8836/VT/zxy/(mbtiles name)/{z}/{x}/{y}.pbf <br>
 <br>
@@ -31,15 +32,21 @@ http://(your server name):8836/VT/zxy/(mbtiles name)/{z}/{x}/{y}.pbf <br>
  e.g. http://rasberrypi400-123.local:8836/VT/zxy/test/1/1/1.pbf <br>
 <br>
 <br>
-We have sample tile from NaturalEarth. Try <a href="./VT/zxy/ne-test/1/1/1.pbf">/VT/zxy/ne-test/1/1/1.pbf</a> This is the pbf extracted from mbtiles in the mbtiles folder.
-
-
-
-
-
-<h3>Delivery of RGB elevation tiles (png) from mbtiles</h3>
-
-<a href="./rgb-elev/zxy/2/1/1.png">./rgb-elev/zxy/2/1/1.png</a>
+We have sample tile from NaturalEarth. Try <a href="./VT/zxy/ne-test/1/1/1.pbf">/VT/zxy/ne-test/1/1/1.pbf</a> <br>
+This is the pbf extracted from mbtiles in the mbtiles folder, so it will fits for larger data, but can be accommodated into a single mbtiles file (e.g. up to a few GB).
+<br>
+<h3>Function 3: Delivery of pbf tiles from multiple mbtiles via server-side processing (nodejs)</h3>
+This is a customized vector tile delivery for my own purpose. If you stored your multiple mbtiles in "UNmbtiles/(data set name)" directory, this server deliver "pbf" vector tiles from it upon requests. your VT can be accessible at:<br>
+<br>
+http://(your server name):8836/UNVT/zxy/(data set name)/{z}/{x}/{y}.pbf <br>
+<br>
+<br>
+This is for our own use, and the data set is not uploaded in GitHub repository. There is certain rule for the mbtiles name so that this function works properly.<br>
+<br>
+<h3>Function 4: Delivery of RGB elevation tiles (png) from multiple mbtiles via server-side processing (nodejs)</h3>
+This is also a customized function for my own purpose. With the default configuration, up to ZL5, RGB elevation tiles is generated from rgbElev/0-0-0.mbtiles. <br>
+If we want larger tile than ZL5, we need to add 6-{x}-{y}.mbtiles that contains the RGB elevation tils within the extent of that 6-{x}-{y} area. <br><br>
+Try this: <a href="./rgb-elev/zxy/2/1/1.png">./rgb-elev/zxy/2/1/1.png</a>
 
 
 <br>
@@ -52,10 +59,11 @@ We have sample tile from NaturalEarth. Try <a href="./VT/zxy/ne-test/1/1/1.pbf">
 
 
 
-<h3>Other files</h3>
+<h2>Sample maps</h2>
 You can check the sample maps. Please make sure that you replaced the location of the vector tile in their style files.<br>  
 map1: <a href="./maps/map-pbf.html">Sample map 1. source is from pbf</a><br>
 map2: <a href="./maps/map-mbtiles.html">Sample map 2. source is from mbtiles</a><br>
+map3: <a href="./maps/map-un.html">Sample map 3. Only for UN internal (need to add data source in mbtiles format.)</a><br>
 
 </body>
 </html>
