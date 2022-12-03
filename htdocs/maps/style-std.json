@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "sprite": "../sprite-rev/sprite_S",
+  "sprite": "http://localhost:8836/sprite-rev/sprite_S",
   "glyphs": "../font/{fontstack}/{range}.pbf",
   "sources": {
     "v": {
