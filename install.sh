@@ -12,3 +12,5 @@ sudo apt update
 sudo apt install -y autoconf automake cmake code git gpsd gpsd-clients gpsd-tools libsqlite3-dev libtool raspberrypi-kernel-headers nodejs parallel sqlite3 tmux unar vim xrdp yarn zip #gdal-bin nginx pdal ruby 
 sudo service xrdp restart
 sudo yarn global add browserify hjson pm2 rollup @mapbox/mapbox-gl-style-spec @pushcorn/hocon-parser @unvt/charites
+git clone https://github.com/ubukawa/albite
+cd albite; npm install; cd ..
