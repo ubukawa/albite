@@ -1,6 +1,6 @@
 ##############
 # This is for raspberry pi implementation (not for CentOS/RHEL)
-# This is a subset of the tools installed by https://github.com/unvt/equinox/blob/master/install.sh
+# This is a subset of the tools installed by https://github.com/unvt/equinox/blob/master/install.sh with my server repository 
 ##############
 cd $HOME
 sudo apt update
